@@ -9,6 +9,7 @@ defmodule WeatherApiWeb.Router do
     pipe_through :api
 
     get "/weather/:city", WeatherController, :show
+    get "/geocoding/:city", GeocodingController, :show
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development

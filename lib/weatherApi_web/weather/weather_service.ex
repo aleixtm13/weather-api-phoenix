@@ -3,7 +3,6 @@ defmodule WeatherApi.WeatherService do
   @api_key System.get_env("OPENWEATHER_API_KEY")
 
   def get_weather(city) do
-    IO.inspect(@api_key, label: "API Key")
     url = "#{@api_url}?q=#{city}&appid=#{@api_key}"
     case HTTPoison.get(url) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
